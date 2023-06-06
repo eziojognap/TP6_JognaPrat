@@ -40,10 +40,9 @@
 
 /* === Headers files inclusions
  * =============================================================== */
-#include "digital.h"
-#include "chip.h"
-#include <stdbool.h>
 #include "bsp.h"
+#include <stdbool.h>
+#include <stddef.h>
 
 /* === Macros definitions
  * ====================================================================== */
@@ -68,46 +67,36 @@
 
 /* === Public function implementation
  * ========================================================= */
-
-int main(void) {
-
-    int divisor = 0;
-    bool current_state, last_state = false;
+int main(void){
 
     board_puntero board = BoardCreate();
 
-    /********** Lógica ************/
-    while (true) {
-        if (true == DigitalInputGetState(board->Boton1)) {
-            DigitalOutputActivate(board->led_azul);
-        } else {
-            DigitalOutputDeactivate(board->led_azul);
+    while(true){
+        if (DigitalInputHasActivated(board->accept)){
+            DisplayWriteBCD(board->display, (uint8_t[]){1,2,3,4}, 4);
         }
 
-        current_state = (true == DigitalInputGetState(board->Boton2));
-        if ((current_state) && (!last_state)) {
-            DigitalOutputToggle(board->led_rojo);
-        }
-        last_state = current_state;
-
-        if (true == DigitalInputGetState(board->Boton3)) {
-            DigitalOutputActivate(board->led_amarillo);
-        }
-        if (true == DigitalInputGetState(board->Boton4)) {
-            DigitalOutputDeactivate(board->led_amarillo);
+        if (DigitalInputHasActivated(board->cancel)){
+            DisplayWriteBCD(board->display, NULL, 0);
         }
 
-        divisor++;
-        if (divisor == 2) {
-            divisor = 0;
-            DigitalOutputToggle(board->led_verde);
+        if(DigitalInputHasActivated(board->set_time)){
+
         }
 
-        for (int index = 0; index < 100; index++) {
-            for (int delay = 0; delay < 25000; delay++) {
-                __asm("NOP");
-            }
+        if(DigitalInputHasActivated(board->set_alarm)){
+
         }
+
+        if(DigitalInputHasActivated(board->decrement)){
+
+        }
+
+        if(DigitalInputHasActivated(board->increment)){
+
+        }
+
+        DisplayRefresh(board->display);
     }
 }
 
