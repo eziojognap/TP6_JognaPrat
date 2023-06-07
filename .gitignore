@@ -155,4 +155,3 @@ build/**
 /latex
 
 #pongo /muju para que no aparezca la carpeta muju en el commit y pueda seguir los cambios
-/muju
