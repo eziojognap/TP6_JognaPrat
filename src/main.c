@@ -43,6 +43,8 @@
 #include "bsp.h"
 #include <stdbool.h>
 #include <stddef.h>
+#include "ciaa.h"
+#include "pantalla.h"
 
 /* === Macros definitions
  * ====================================================================== */

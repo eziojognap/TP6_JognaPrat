@@ -13,6 +13,7 @@ extern "C" {
 /************************************* INCLUDES ***************************************************/
 #include <stdbool.h>
 #include "digital.h"
+#include "pantalla.h"
 
 /************************************* MACROS AND DEFINES *****************************************/
 
@@ -27,6 +28,9 @@ typedef struct board_estructura {
     digital_input_puntero cancel;
 
     digital_output_puntero buzzer;
+
+    display_puntero display;
+    
 } const * const board_puntero;
 
 /************************************* EXPORTED VARIABLES *****************************************/
