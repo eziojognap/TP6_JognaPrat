@@ -31,6 +31,8 @@
  * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
  * POSSIBILITY OF SUCH DAMAGE.
  */
+#ifndef PONCHO_H
+#define PONCHO_H
 
 /************************************* C++ compilar como C ****************************************/
 #ifdef __cplusplus /*Esta definición se usa para compilar en c codigo que es de c++*/
@@ -38,9 +40,6 @@ extern "C" {
 #endif
 
 /************************************* INCLUDES ***************************************************/
-// #ifndef PONCHO_H
-// #define PONCHO_H
-
 #include "chip.h"
 
 /************************************* MACROS AND DEFINES *****************************************/
@@ -193,4 +192,5 @@ extern "C" {
 #ifdef __cplusplus /*Con esto se cierra la la def condicional para compilar en c codigo que es de  \
                       c++*/
 }
+#endif
 #endif

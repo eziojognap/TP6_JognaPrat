@@ -1,6 +1,4 @@
-CFLAGS = -g0
-MODULES = 
 BOARD ?= edu-ciaa-nxp
-MUJU ?= ./muju
+MUJU ?=../muju
 
 include $(MUJU)/module/base/makefile

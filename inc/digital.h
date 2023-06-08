@@ -4,6 +4,9 @@
  * @date
  * @brief
  **************************************************************************************************/
+#ifndef DIGITAL_H
+#define DIGITAL_H
+#endif
 
 /************************************* C++ compilar como C ****************************************/
 #ifdef __cplusplus /*Esta definición se usa para compilar en c codigo que es de c++*/
@@ -15,9 +18,6 @@ extern "C" {
 #include <stdbool.h>
 
 /************************************* MACROS AND DEFINES *****************************************/
-#ifndef DIGITAL_H
-#define DIGITAL_H
-#endif
 
 /************************************* TYPEDEFS ***************************************************/
 //! Referencia a un descriptor para gestionar una salida digital
