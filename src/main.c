@@ -76,22 +76,29 @@ int main(void) {
   while (true) {
     if (DigitalInputHasActivated(board->accept) == true) {
       DisplayWriteBCD(board->display, (uint8_t[]){1, 2, 3, 4}, 4);
+      DisplayRefresh(board->display);
     }
 
     if (DigitalInputHasActivated(board->cancel) == true) {
       DisplayWriteBCD(board->display, NULL, 0);
+      DisplayRefresh(board->display);
     }
 
     if (DigitalInputHasActivated(board->set_time) == true) {
+      DisplayWriteBCD(board->display, (uint8_t[]){1, 1, 1, 1}, 4);
+      DisplayRefresh(board->display);
     }
 
     if (DigitalInputHasActivated(board->set_alarm) == true) {
+      DisplayWriteBCD(board->display, (uint8_t[]){2, 2, 2, 2}, 4);
     }
 
     if (DigitalInputHasActivated(board->decrement) == true) {
+      DisplayWriteBCD(board->display, (uint8_t[]){5, 6, 7, 8}, 4);
     }
 
     if (DigitalInputHasActivated(board->increment) == true) {
+      DisplayWriteBCD(board->display, (uint8_t[]){9, 9, 9, 9}, 4);
     }
 
     DisplayRefresh(board->display);

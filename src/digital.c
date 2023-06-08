@@ -162,13 +162,16 @@ void DigitalInputDeactivate(digital_input_puntero Input) {
 /// @param input
 /// @return
 bool DigitalInputGetState(digital_input_puntero input) {
-  bool valor_input, valor_bit, valor;
-  valor_input = input->invertido;
-  valor_bit = Chip_GPIO_ReadPortBit(LPC_GPIO_PORT, input->port, input->pin);
+  //   bool valor_input, valor_bit, valor;
+  //   valor_input = input->invertido;
+  //   valor_bit = Chip_GPIO_ReadPortBit(LPC_GPIO_PORT, input->port,
+  //   input->pin);
 
-  // Hace un XOR entre el valor de la entrada y el valor del bit del GPIO
-  valor = valor_input ^ valor_bit;
-  return valor;
+  //   // Hace un XOR entre el valor de la entrada y el valor del bit del GPIO
+  //   valor = valor_input ^ valor_bit;
+  //   return valor;
+  return input->invertido ^
+         Chip_GPIO_ReadPortBit(LPC_GPIO_PORT, input->port, input->pin);
 }
 
 bool DigitalInputHasChange(digital_input_puntero input) {

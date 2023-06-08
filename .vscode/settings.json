@@ -16,10 +16,10 @@
         "editor.formatOnSave": true
     },
     "files.exclude": {
-        "**/*.pyc": {
+        "*/.pyc": {
             "when": "$(basename).py"
         },
-        "**/__pycache__": true,
+        "**/_pycache_": true,
         ".pytest_cache": true,
         ".coverage": true
     }
