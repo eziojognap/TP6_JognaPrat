@@ -40,11 +40,11 @@
 
 /* === Headers files inclusions
  * =============================================================== */
-#include "bsp.h"
+
+#include "ciaa.h"
+#include "digital.h"
 #include <stdbool.h>
 #include <stddef.h>
-#include "ciaa.h"
-#include "pantalla.h"
 
 /* === Macros definitions
  * ====================================================================== */
@@ -69,37 +69,33 @@
 
 /* === Public function implementation
  * ========================================================= */
-int main(void){
+int main(void) {
 
-    board_puntero board = BoardCreate();
+  board_puntero board = BoardCreate();
 
-    while(true){
-        if (DigitalInputHasActivated(board->accept)){
-            DisplayWriteBCD(board->display, (uint8_t[]){1,2,3,4}, 4);
-        }
-
-        if (DigitalInputHasActivated(board->cancel)){
-            DisplayWriteBCD(board->display, NULL, 0);
-        }
-
-        if(DigitalInputHasActivated(board->set_time)){
-
-        }
-
-        if(DigitalInputHasActivated(board->set_alarm)){
-
-        }
-
-        if(DigitalInputHasActivated(board->decrement)){
-
-        }
-
-        if(DigitalInputHasActivated(board->increment)){
-
-        }
-
-        DisplayRefresh(board->display);
+  while (true) {
+    if (DigitalInputHasActivated(board->accept) == true) {
+      DisplayWriteBCD(board->display, (uint8_t[]){1, 2, 3, 4}, 4);
     }
+
+    if (DigitalInputHasActivated(board->cancel) == true) {
+      DisplayWriteBCD(board->display, NULL, 0);
+    }
+
+    if (DigitalInputHasActivated(board->set_time) == true) {
+    }
+
+    if (DigitalInputHasActivated(board->set_alarm) == true) {
+    }
+
+    if (DigitalInputHasActivated(board->decrement) == true) {
+    }
+
+    if (DigitalInputHasActivated(board->increment) == true) {
+    }
+
+    DisplayRefresh(board->display);
+  }
 }
 
 /* === End of documentation

@@ -8,27 +8,34 @@
 #define DIGITAL_H
 #endif
 
-/************************************* C++ compilar como C ****************************************/
-#ifdef __cplusplus /*Esta definición se usa para compilar en c codigo que es de c++*/
+/************************************* C++ compilar como C
+ * ****************************************/
+#ifdef __cplusplus /*Esta definición se usa para compilar en c codigo que es  \
+                      de c++*/
 extern "C" {
 #endif
 
-/************************************* INCLUDES ***************************************************/
-#include <stdint.h>
+/************************************* INCLUDES
+ * ***************************************************/
 #include <stdbool.h>
+#include <stdint.h>
 
-/************************************* MACROS AND DEFINES *****************************************/
+/************************************* MACROS AND DEFINES
+ * *****************************************/
 
-/************************************* TYPEDEFS ***************************************************/
+/************************************* TYPEDEFS
+ * ***************************************************/
 //! Referencia a un descriptor para gestionar una salida digital
-typedef struct digital_output_estructura * digital_output_puntero;
+typedef struct digital_output_estructura *digital_output_puntero;
 
 //! Referencia a un descriptor para gestionar una entrada digital
-typedef struct digital_input_estructura * digital_input_puntero;
+typedef struct digital_input_estructura *digital_input_puntero;
 
-/************************************* EXPORTED VARIABLES *****************************************/
+/************************************* EXPORTED VARIABLES
+ * *****************************************/
 
-/************************************* GLOBAL FUNCTION PROTOTYPES *********************************/
+/************************************* GLOBAL FUNCTION PROTOTYPES
+ * *********************************/
 
 /* Salidas */
 
@@ -60,7 +67,7 @@ bool DigitalInputGetState(digital_input_puntero input);
 
 bool DigitalInputHasChanged(digital_input_puntero input);
 
-#ifdef __cplusplus /*Con esto se cierra la la def condicional para compilar en c codigo que es de  \
-                      c++*/
+#ifdef __cplusplus /*Con esto se cierra la la def condicional para compilar en \
+                      c codigo que es de c++*/
 }
 #endif

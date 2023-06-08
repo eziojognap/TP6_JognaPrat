@@ -4,12 +4,11 @@
  **************************************************************************************************/
 
 /************************************* INCLUDES ***************************************************/
-#include "bsp.h"
 #include "chip.h"
 #include "poncho.h"
 #include "digital.h"
 #include "ciaa.h"
-#include "pantalla.h"
+//#include "pantalla.h"
 
 /************************************* EXTERN VARIABLES *******************************************/
 
@@ -165,6 +164,7 @@ void ScreenTurnOff(void){
 void SegmentsTurnOn(uint8_t segments){
     Chip_GPIO_SetValue (LPC_GPIO_PORT, SEGMENTS_GPIO, (segments) & SEGMENTS_MASK);
     Chip_GPIO_SetPinState (LPC_GPIO_PORT, SEGMENT_P_GPIO, SEGMENT_P_BIT, (segments & SEGMENT_P_PIN));
+}
 
 void DigitTurnOn(uint8_t digit){
     Chip_GPIO_SetValue (LPC_GPIO_PORT, DIGITS_GPIO, (1 << (digit)) & DIGITS_MASK);
